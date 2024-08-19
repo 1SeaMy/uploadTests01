@@ -53,7 +53,7 @@ public class Assert01 {
         //9. Click 'Logout' button
         driver.findElement(By.xpath("//a[text()=' Logout'] ")).click();
         //10. Verify that user is navigated to login page
-        String expectedUrl="https://automationexercise.com/login111";
+        String expectedUrl="https://automationexercise.com/login";
         String actualUrl= driver.getCurrentUrl();
         Assert.assertEquals(expectedUrl,actualUrl);
         //11. Close driver
