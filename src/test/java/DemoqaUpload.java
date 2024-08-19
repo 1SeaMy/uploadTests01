@@ -7,15 +7,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class DemoqaUpload {
+    @Test
     public static void main(String[] args) {
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions options =new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--disable notifications");
-        options.addArguments("--incognito");
+//        options.addArguments("--disable notifications");
+//        options.addArguments("--incognito");
 
         DesiredCapabilities cp=new DesiredCapabilities();
         cp.setCapability(ChromeOptions.CAPABILITY, options);
@@ -28,5 +31,8 @@ public class DemoqaUpload {
 
         WebElement upLoadButton =driver.findElement(By.id("uploadFile"));
         upLoadButton.sendKeys(uploadFile.getAbsolutePath());
+
+        WebElement uploadMes=driver.findElement(By.id("uploadedFilePath"));
+        Assert.assertTrue(uploadMes.isDisplayed());
     }
 }
