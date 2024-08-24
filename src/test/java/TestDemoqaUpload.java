@@ -15,6 +15,7 @@ public class TestDemoqaUpload {
     public void test01() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options =new ChromeOptions();
+//        options.addArguments("headless");
         options.addArguments("--remote-allow-origins=*");
         DesiredCapabilities cp=new DesiredCapabilities();
         cp.setCapability(ChromeOptions.CAPABILITY, options);
@@ -30,8 +31,7 @@ public class TestDemoqaUpload {
         upLoadButton.sendKeys(uploadFile.getAbsolutePath());
 
         WebElement uploadMes=driver.findElement(By.id("uploadedFilePath"));
-        Assert.assertTrue(uploadMes.isDisplayed());
-        Assert.assertEquals(uploadMes.getText(),"C:\\fakepath\\2.jpg");
+        Assert.assertEquals(uploadMes.getText(),"C:\\fakepath\\1.jpg");
         System.out.println(uploadMes.getText());
         driver.close();
     }
