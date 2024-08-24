@@ -15,7 +15,7 @@ public class TestDemoqaUpload {
     public void test01() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options =new ChromeOptions();
-//        options.addArguments("headless");
+        options.addArguments("headless");
         options.addArguments("--remote-allow-origins=*");
         DesiredCapabilities cp=new DesiredCapabilities();
         cp.setCapability(ChromeOptions.CAPABILITY, options);
