@@ -9,7 +9,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import java.time.Duration;
 import java.io.File;
-
 public class TestDemoqaUpload {
     @Test
     public void test01() {
@@ -26,7 +25,6 @@ public class TestDemoqaUpload {
 
         driver.get("https://demoqa.com/upload-download");
         File uploadFile = new File("src/test/1.jpg");
-
         WebElement upLoadButton =driver.findElement(By.id("uploadFile"));
         upLoadButton.sendKeys(uploadFile.getAbsolutePath());
 
